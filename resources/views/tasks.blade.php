@@ -60,8 +60,14 @@
                       <!-- Task Name -->
                       <td>{{ $task->name }}</td>
 
+                      <!-- Delete Button -->
                       <td>
-                        <!-- TODO: Delete Button -->
+                        <form method="POST" action="{{ url('task/'.$task->id) }}">
+                          @csrf
+                          @method('DELETE')
+            
+                          <button type="submit" class="btn btn-danger float-right btn-sm">Delete</button>
+                        </form>
                       </td>
                     </tr>
                   @endforeach

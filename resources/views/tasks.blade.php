@@ -30,7 +30,8 @@
               </div>
 
               <!-- Add Task Button -->
-              <button type="submit" class="btn btn-primary">Add Task</button>
+              <button type="submit" class="btn btn-primary">
+                <i class="fas fa-plus"></i> Add Task</button>
             </form>
           </div>
         </div>

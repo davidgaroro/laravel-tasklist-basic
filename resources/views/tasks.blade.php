@@ -14,7 +14,8 @@
             New Task
           </div>
           <div class="card-body">
-            <!-- TODO: Display Validation Errors -->
+            <!-- Display Validation Errors -->
+            @include('common.errors')
 
             <!-- New Task Form -->
             <form method="POST" action="{{ url('task')}}">

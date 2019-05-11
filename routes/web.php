@@ -29,21 +29,21 @@ Route::get('/', function () {
  * Add New Task
  */
 Route::post('/task', function (Request $request) {
-  $validator = Validator::make($request->all(), [
-      'name' => 'required|max:255',
-  ]);
+    $validator = Validator::make($request->all(), [
+        'name' => 'required|max:255',
+    ]);
 
-  if ($validator->fails()) {
-      return redirect('/')
-          ->withErrors($validator)
-          ->withInput();
-  }
+    if ($validator->fails()) {
+        return redirect('/')
+            ->withErrors($validator)
+            ->withInput();
+    }
 
-  $task = new Task;
-  $task->name = $request->name;
-  $task->save();
+    $task = new Task;
+    $task->name = $request->name;
+    $task->save();
 
-  return redirect('/');
+    return redirect('/');
 });
 
 /**

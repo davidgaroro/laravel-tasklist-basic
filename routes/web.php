@@ -25,7 +25,17 @@ Route::get('/', function () {
  * Add New Task
  */
 Route::post('/task', function (Request $request) {
-    //
+  $validator = Validator::make($request->all(), [
+      'name' => 'required|max:255',
+  ]);
+
+  if ($validator->fails()) {
+      return redirect('/')
+          ->withErrors($validator)
+          ->withInput();
+  }
+
+  // Create The Task...
 });
 
 /**

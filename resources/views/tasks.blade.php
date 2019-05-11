@@ -35,7 +35,41 @@
           </div>
         </div>
 
-        <!-- TODO: Current Tasks -->
+        <!-- Current Tasks -->
+        @if (count($tasks) > 0)
+          <div class="card mt-5">
+            <div class="card-header">
+              Current Tasks
+            </div>
+            
+            <div class="card-body">
+              <table class="table table-striped">
+
+                <!-- Table Headings -->
+                <thead>
+                  <tr>
+                    <th scope="col">Task</th>
+                    <th scope="col">&nbsp;</th>
+                  </tr>
+                </thead>
+
+                <!-- Table Body -->
+                <tbody>
+                  @foreach ($tasks as $task)
+                    <tr>
+                      <!-- Task Name -->
+                      <td>{{ $task->name }}</td>
+
+                      <td>
+                        <!-- TODO: Delete Button -->
+                      </td>
+                    </tr>
+                  @endforeach
+                </tbody>
+              </table>
+            </div>
+          </div>
+        @endif
       </div>
     </div>
   </div>
